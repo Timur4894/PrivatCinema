@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BROADWAY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> <!-- Это подключает шрифт Roboto с Google Fonts -->
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+
+        header h1 {
+            font-size: 25px;     /* Уменьшим размер шрифта */
+            margin-top: 10px;    /* Поднимем текст наверх */
+            margin-left: -160px;   /* Сместим текст влево */
+            font-weight: 300;    /* Сделаем текст более тонким */
+            letter-spacing: 2px; /* Расширим интервал между буквами */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+
+            margin: 0;
+            padding: 0;
+            background-color: #190e54;
+            color: #fff;
+        }
+
+        header {
+            background-color: #190e54;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 40px;
+            height: auto;
+            position: relative;
+        }
+
+
+        .text-below {
+            position: absolute;
+            margin-top: 25px;    /* Поднимем текст наверх */
+            margin-left: -10px;
+            font-size: 10px;
+            width: 200px;
+        }
+
+        .book-button {
+        display: block;
+        background-color: #c36;
+        padding: 10px 0px;
+        border-radius: 10px;
+        width: 150px;               /* Увеличенная ширина */
+        text-align: center;         /* Центрирование текста */
+        margin-left: 0;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        cursor: pointer;
+        text-decoration: none;      /* Убрано подчеркивание */
+        color: inherit;             /* Чтобы текст на кнопке имел такой же цвет, как и остальной текст */
+    }
+
+    .slider {
+        width: 1500%;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-top: 50px;
+        position: relative;
+        animation: slide 300s linear infinite;
+        height: 100px; /* Например, если высота изображения 200px */
+    }
+
+
+    .slider img {
+            border-radius: 10px;
+            width: 3%; /* Поскольку у нас 6 изображений, каждое займет 16.67% ширины (100/6) */
+            height: 70px; /* Зададим фиксированную высоту */
+            display: inline-block;
+            object-fit: cover; /* Это свойство обрежет изображение, если оно не соответствует заданной высоте/ширине, сохраняя при этом его пропорции */
+        }
+
+    @keyframes slide {
+    from {
+        transform: translateX(-1%);
+    }
+    to {
+        transform: translateX(-93.33%); /* Так как 100% - 6.67% (ширина одного изображения) = 93.33% */
+    }
+}
+
+
+
+.slider-description h3 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+/* Стили для ряда кругов */
+.circle-images .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+
+.circle-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Отступ снизу между рядами */
+}
+
+
+/* Стили для каждого круга */
+.circle {
+    border: 2px solid white;
+    width: 100px;   /* или любой другой размер */
+    height: 100px;
+    border-radius: 50%; /* делает фигуру круглой */
+    background-color: grey; /* временный цвет, его можно изменить на ваше фоновое изображение */
+    margin: 30px;
+    box-shadow: 10px 10px 15px #636;
+    background-size: cover; /* для корректного отображения фото внутри */
+}
+
+
+.circle-1 {
+    background-image: url('1.jpeg');
+}
+
+.circle-2 {
+    background-image: url('2.jpeg');
+}
+
+.circle-3 {
+    background-image: url('3.jpeg');
+}
+
+.circle-4 {
+    background-image: url('4.jpeg');
+}
+
+.circle-5 {
+    background-image: url('5.jpeg');
+}
+
+.circle-6 {
+    background-image: url('6.jpeg');
+}
+
+
+.circle-text {
+    text-align: center;      /* Центрируем текст */
+    margin-top: -10px;       /* Добавляем небольшой отступ сверху */
+    font-size: 14px;        /* Устанавливаем размер шрифта */
+    color: #fff;            /* Цвет текста */
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Отступ снизу, чтобы ряды не сливались */
+}
+
+
+
+.highlight-text {
+        color: #936; /* или любой другой цвет, который вы хотите использовать */
+    }
+
+    /* Стили для прямоугольников */
+    .rectangle {
+        border: 2px solid white;
+        box-shadow: 10px 10px 15px #636;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px; /* Делает углы прямоугольника закругленными */
+        background-color: grey;
+        margin: 30px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rect-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .container {
+    position: relative;
+}
+
+.overlay-svg {
+    display: block;
+    width: 50px;  /* Ширина SVG, меняйте как вам нужно */
+    height: auto; /* Для сохранения пропорций */
+    margin-bottom: -20px; /* Этим мы "заставляем" изображение накладываться на текст */
+    z-index: 1; /* Чтобы изображение было поверх текста */
+}
+
+.overlay-svg2 {
+    display: block;
+    width: 100px;  /* Ширина SVG, меняйте как вам нужно */
+    height: auto; /* Для сохранения пропорций */
+    margin-bottom: -20px; /* Этим мы "заставляем" изображение накладываться на текст */
+    z-index: 1; /* Чтобы изображение было поверх текста */
+}
+
+
+.text {
+    width: 200px;
+    text-align: left;      /* Изменяем выравнивание текста на лево */
+    padding: 10px;
+    color: #936;
+    margin-top: -40px;    /* Поднимем текст наверх */
+    margin-left: -20px;
+    font-size: 20px;
+    z-index: 0;
+    position: absolute;   /* Добавляем абсолютное позиционирование для точного перемещения */
+}
+
+.right-arrow-svg {
+    display: inline-block; /* Сделаем SVG-изображение блочным элементом, чтобы оно было рядом с текстом */
+    width: 50px; /* Установите желаемую ширину */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin-left: 200px; /* Установите отступ слева, чтобы создать промежуток между текстом и изображением */
+    vertical-align: middle; /* Выравнивание по вертикали, чтобы изображение было посередине текста */
+}
+
+.overlay-svg {
+    display: block;
+    width: 50px;  /* Ширина SVG, меняйте как вам нужно */
+    height: auto; /* Для сохранения пропорций */
+    margin-left: 140px;
+    margin-top: -200px; /* Этим мы "заставляем" изображение накладываться на текст */
+    z-index: 1; /* Чтобы изображение было поверх текста */
+}
+.overlay-svg2 {
+    display: block;
+    width: 100px;  /* Ширина SVG, меняйте как вам нужно */
+    height: auto; /* Для сохранения пропорций */
+    margin-left: 220px;
+    margin-top: -50px; /* Этим мы "заставляем" изображение накладываться на текст */
+    z-index: 1; /* Чтобы изображение было поверх текста */
+}
+
+.top-line, .bottom-line {
+    margin-left: -100px;
+    width: 200vw;         /* Ширина экрана */
+    height: 10px;          /* Задайте высоту, которую вы хотите для вашего изображения */
+    object-fit: cover;    /* Это свойство обрежет изображение, если оно не соответствует заданной высоте/ширине, сохраняя при этом его пропорции */
+    display: block;
+}
+
+.top-line2, .bottom-line {
+    margin-left: -100px;
+    width: 200vw;         /* Ширина экрана */
+    height: 10px;          /* Задайте высоту, которую вы хотите для вашего изображения */
+    object-fit: cover;    /* Это свойство обрежет изображение, если оно не соответствует заданной высоте/ширине, сохраняя при этом его пропорции */
+    display: block;
+    margin-top: -70px;
+}
+
+.slider, .top-line, .bottom-line {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.brd{
+    margin-left: -100px;
+    margin-top: 50px;
+    margin-bottom: -20px;
+}
+
+.rectangle-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white; /* или любой другой цвет */
+    font-size: 16px;
+    text-shadow: 1px 1px 1px #c36;
+}
+.other-text {
+    text-align: center;
+    font-size: 24px;  /* или любой другой размер, который вам подходит */
+    margin-top: -40px;
+    color: #936;   /* цвет текста - розовый, как у вас было в других частях дизайна */
+}
+
+
+.choose-room {
+    margin-top: 60px;  /* Добавляем отступ сверху для разделения блоков */
+    text-align: center;
+}
+
+.choose-room-text {
+    font-size: 20px; /* или любой другой размер, который вы предпочитаете */
+}
+
+.highlight-text {
+    color: #936;
+}
+
+h2 {
+    margin-top: 20px;  /* Добавляем небольшой отступ сверху для разделения текста */
+}
+
+
+
+    /* стили основного контейнера слайдера */
+    .slider2 {
+      position: relative;
+      overflow: hidden;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* стили для обёртки, в которой заключены слайды */
+    .slider2__wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* стили для контейнера слайдов */
+    .slider2__items {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    /* стили для слайдов */
+    .slider2__item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    /* стили для кнопок "вперед" и "назад" */
+    .slider2__control {
+  position: absolute;
+  top: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  height: 50px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+    .slider2__control_show {
+      display: flex;
+    }
+
+    .slider2__control:hover,
+    .slider2__control:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      opacity: 0.9;
+    }
+
+    .slider2__control_prev {
+      left: 0;
+    }
+
+    .slider2__control_next {
+      right: 0;
+    }
+
+    .slider2__control::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .slider2__control_prev::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .slider2__control_next::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+    /* стили для индикаторов */
+    .slider2__indicators {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      left: 0;
+      z-index: 15;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      margin-right: 15%;
+      margin-left: 15%;
+      list-style: none;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+
+
+    .slider2__indicators li.active {
+      background-color: #fff;
+    }
+
+    .img-fluid {
+       box-shadow: 10px 10px 15px #636;
+    display: inline-block;
+    height: auto;
+    max-width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-caption{
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    font-size: 13px;
+    padding: 5px 10px; /* отступы вокруг текста */
+    background: rgba(0, 0, 0, 0.3); /* затемнение */
+    color: white; /* цвет текста */
+    text-align: center;
+    border-bottom-left-radius: 8px; /* соответствие радиусу изображения */
+    border-bottom-right-radius: 8px;
+    max-width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.image-caption3{
+    position: absolute;
+    bottom: 15px; /* небольшой отступ снизу внутри рамки */
+    left: 0;
+    right: 0;
+    padding: 5px 10px; /* отступы вокруг текста */
+    color: #c39; /* цвет текста */
+    text-align: center;
+    font-size: 13px;
+    border-bottom-left-radius: 8px; /* соответствие радиусу изображения */
+    border-bottom-right-radius: 8px;
+    max-width: calc(80% - 40px);
+    margin-left: 40px;
+    margin-right: 20px;
+
+}
+
+.image-caption2{
+    position: absolute;
+    bottom: 20px; /* небольшой отступ снизу внутри рамки */
+    left: 0;
+    right: 0;
+    padding: 5px 10px; /* отступы вокруг текста */
+    color: #c39; /* цвет текста */
+    text-align: center;
+    font-size: 13px;
+    border-bottom-left-radius: 8px; /* соответствие радиусу изображения */
+    border-bottom-right-radius: 8px;
+    max-width: calc(80% - 40px);
+    margin-left: 40px;
+    margin-right: 20px;
+}
+.image-caption4{
+    position: absolute;
+    bottom: 2px; /* небольшой отступ снизу внутри рамки */
+    left: 0;
+    right: 0;
+    padding: 5px 10px; /* отступы вокруг текста */
+    color: #c39; /* цвет текста */
+    text-align: center;
+    font-size: 13px;
+    border-bottom-left-radius: 8px; /* соответствие радиусу изображения */
+    border-bottom-right-radius: 8px;
+    max-width: calc(80% - 40px);
+    margin-left: 40px;
+    margin-right: 20px;
+    bottom: 20px;
+}
+.image-subcaption {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    padding: 3px 8px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 50%; /* Уменьшение размера шрифта в 2 раза */
+    text-align: center;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    max-width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.rectangle-container {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание прямоугольников */
+    align-items: center; /* Центрирование прямоугольников по горизонтали */
+    margin: 20px 0;
+}
+
+
+.rectangle2 {
+    margin: 10px 0; /* Вертикальные отступы между прямоугольниками */
+    background-color: #99f; /* Фиолетовый фон */
+    border-radius: 10px; /* Закругление углов */
+    display: flex;
+    align-items: center; /* Выравнивание текста по вертикали */
+    justify-content: center; /* Выравнивание текста по горизонтали */
+    height: 400px; /* Удвоенная высота прямоугольника */
+    width: calc(100% - 40px); /* Ширина уменьшена на 40 пикселей (20 слева и 20 справа) */
+    transition: box-shadow 0.3s ease; /* Плавное появление тени */
+    box-shadow: 0 0 20px 10px rgba(255, 102, 153, 0.6);
+}
+
+.rectangle:hover {
+    box-shadow: 0px 0px 10px 0px #FF69B4; /* Розовая подсветка при наведении */
+}
+.rectangle p {
+    font-size: 36px; /* Удвоенный размер шрифта */
+    color: white; /* Белый цвет текста */
+}
+
+.tariff-title {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 20px; /* Отступ снизу перед блоком с прямоугольниками */
+}
+
+.tariff-title h2 {
+    font-size: 24px; /* Вы можете установить любой размер шрифта, который вам нравится */
+}
+
+.tariff-title .highlight {
+    color: #FF69B4; /* Розовый цвет */
+    font-weight: bold; /* Жирное начертание */
+}
+
+.rectangle-title {
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: left;
+    margin-top: -300px;
+    padding-left: 0px;
+}
+
+.rectangle-price {
+    white-space: nowrap; /* запрещает перенос текста на новую строку */
+    max-width: 100%;    /* устанавливает максимальную ширину */
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    margin-top: -300px;
+    margin-left: 30px;
+}
+
+.rectangle-features {
+    color: black;
+    width: 80%;
+    list-style-type: none; // Убираем маркеры списка
+    padding: 0;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: -340px;
+}
+
+.rectangle-features2 {
+    color: black;
+    width: 80%;
+    list-style-type: none; // Убираем маркеры списка
+    padding: 0;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: -320px;
+}
+.rectangle-features3 {
+    color: black;
+    width: 80%;
+    list-style-type: none; // Убираем маркеры списка
+    padding: 0;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: -350px;
+}
+
+.xxx{
+    text-decoration: none;
+}
+.booking-button {
+    display: block;
+    width: 270px;  // Занимает 80% ширины родительского контейнера
+    height: 30px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #f39;  // Розовый цвет
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto; // Отцентрирует кнопку по горизонтали и добавит отступ сверху и снизу
+    text-align: center;
+    margin-top: 350px;
+    margin-left: -250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.booking-button:hover {
+    background-color: #FF1493; // Немного темнее розового цвета при наведении
+}
+
+
+.distinguishing-container2 {
+    text-align: center;
+    margin: 50px 0;
+    background: #639;
+}
+
+.distinguishing-title2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.distinguishing-text2 {
+    margin: 10px 0;
+    font-size: 10px;
+    width: 80%;
+    margin-left: 35px;
+}
+
+.circles-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-row2, .text-row2 {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+
+}
+
+.circle2 {
+    width: 100px;
+    height: 100px;
+    background-color: #f39;
+    border-radius: 50%;
+    margin: 10px 50px;
+}
+
+.circle-text2 {
+    text-align: center;
+    margin-left: -40px;
+    width: 130px;
+    color: #f39;  /* Добавлено для установки розового цвета текста */
+}
+.circle-text3 {
+    text-align: center;
+    margin-left: 100px;
+    color: #f39;  /* Добавлено для установки розового цвета текста */
+}
+
+.circle-text4 {
+    text-align: center;
+    width: 80px;
+    margin-left: 10px;
+    color: #f39;  /* Добавлено для установки розового цвета текста */
+}
+.circle-text5 {
+    text-align: center;
+    margin-left: 95px;
+    width: 130px;
+    color: #f39;  /* Добавлено для установки розового цвета текста */
+}
+
+.circle2 i {
+    font-size: 70px;
+    margin-top: 15px;
+    color: #fff;     /* розовый цвет */
+}
+
+.site-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.faq-section {
+    padding: 50px 20px; /* Добавляем отступы для блока */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.faq-title {
+    font-size: 24px; /* Увеличиваем размер шрифта для заголовка */
+    margin-bottom: 20px; /* Отступ от заголовка до описания */
+}
+
+.faq-title .highlight {
+    color: #f39; /* Розовый цвет для слова "ВОПРОСЫ" */
+}
+
+.faq-description {
+    font-size: 16px; /* Размер шрифта для описания */
+    max-width: 800px; /* Ограничиваем максимальную ширину текста */
+    margin: 0 auto; /* Центрируем текст по горизонтали */
+}
+
+.texttt{
+       font-size: 16px;
+       max-width: 800px
+}
+
+/* По умолчанию, блок с ошибкой скрыт */
+.desktop-error {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0); /* Полупрозрачный чёрный фон */
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20%; /* Для вертикального центрирования текста */
+    z-index: 9999; /* Чтобы блок был выше других элементов */
+}
+
+/* Если ширина экрана больше 1024px (обычно это десктопные компьютеры), покажем сообщение */
+@media screen and (min-width: 600px) {
+    .desktop-error {
+        display: block;
+    }
+
+    /* Скрываем остальное содержимое сайта */
+    body > *:not(.desktop-error) {
+        display: none;
+    }
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>BRODWAY</p>
+        <h1>
+              Liverpool
+        </h1>
+
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="text">Get complete privacy</div>
+            <img src="6.svg" class="right-arrow-svg">
+            <img src="5.svg" class="overlay-svg">
+            <img src="4.svg" class="overlay-svg2">
+            <p></p>
+
+        </div>
+
+
+        <div class="text-below">
+            The best cinema for dates
+        parties and birthdays!
+        Comfort and cozy atmosphere
+        for our beloved customers
+        </div>
+        <a href="book.html" class="book-button" id="book-button">Reserve</a>
+
+        <img src="film.svg" class="top-line">
+        <div class="slider">
+            <img src="11.jpeg" alt="Image 1">
+            <img src="12.jpeg" alt="Image 2">
+            <img src="13.jpeg" alt="Image 3">
+            <img src="14.jpeg" alt="Image 4">
+            <img src="15.jpeg" alt="Image 5">
+            <img src="16.jpeg" alt="Image 6">
+            <img src="27.jpeg" alt="Image 7">
+            <img src="18.jpeg" alt="Image 8">
+            <img src="19.jpeg" alt="Image 9">
+            <img src="20.jpeg" alt="Image 10">
+            <img src="21.jpeg" alt="Image 11">
+            <img src="22.jpeg" alt="Image 12">
+            <img src="23.jpeg" alt="Image 13">
+            <img src="24.jpeg" alt="Image 14">
+            <img src="25.jpeg" alt="Image 15">
+        </div>
+    </div>
+    <img src="film.svg" class="top-line2">
+
+
+<div class="slider-description">
+    <div class="brd"><h3>BROADWAY Is...</h3></div>
+    <div class="circle-images">
+    <div class="circle-row">
+    <div>
+        <div class="circle circle-1"></div>
+        <p class="circle-text">Only you
+</p>
+    </div>
+    <div>
+        <div class="circle circle-2"></div>
+        <p class="circle-text">Covering
+</p>
+    </div>
+</div>
+<div class="circle-row">
+    <div>
+        <div class="circle circle-3"></div>
+        <p class="circle-text">An extraordinary design
+</p>
+    </div>
+    <div>
+        <div class="circle circle-4"></div>
+        <p class="circle-text">Your project
+
+</p>
+    </div>
+</div>
+<div class="circle-row">
+    <div>
+        <div class="circle circle-5"></div>
+        <p class="circle-text">Big screen
+</p>
+    </div>
+    <div>
+        <div class="circle circle-6"></div>
+        <p class="circle-text">Karaoke</p>
+    </div>
+</div>
+</div>
+
+
+
+
+
+    <h3 class="perfect-place">Perfect place for <span class="highlight-text">Dates</span></h3>
+
+    <div class="rectangles">
+        <div class="rect-row">
+            <div class="rectangle" style="background-image: url('боевик.jpg');"><span class="rectangle-text">Action</span></div>
+            <div class="rectangle" style="background-image: url('детективы.jpg');"><span class="rectangle-text">Detectives</span></div>
+        </div>
+        <div class="rect-row">
+            <div class="rectangle" style="background-image: url('комедия.jpeg');"><span class="rectangle-text">Comedy</span></div>
+            <div class="rectangle" style="background-image: url('мелодраммы.jpg');"><span class="rectangle-text">Melodramas</span></div>
+        </div>
+        <div class="rect-row">
+            <div class="rectangle" style="background-image: url('мультики.jpg');"><span class="rectangle-text">Cartoons</span></div>
+            <div class="rectangle" style="background-image: url('трилер.jpg');"><span class="rectangle-text">Jail</span></div>
+        </div>
+        <div class="rect-row">
+            <div class="rectangle" style="background-image: url('ужас.jpg');"><span class="rectangle-text">Horror</span></div>
+            <div class="rectangle" style="background-image: url('фантастика.jpg');"><span class="rectangle-text">Fantastic</span></div>
+        </div>
+    </div>
+    <div class="other-text">... and a lot more</div>
+
+
+
+    <div class="choose-room">
+        <p class="choose-room-text">Choose your room and rate and just enjoy <span class="highlight-text">PERFECT EVENING</span></p>
+        <h2>OUR ROOMS:</h2>
+    </div>
+</div>
+
+  <div class="slider2">
+    <div class="slider2__wrapper">
+      <div class="slider2__items">
+        <div class="slider2__item">
+    <div class="image-container">
+
+        <img class="img-fluid" src="room2.jpg" alt="c2">
+        <span class="image-caption">HOLLYWOOD</span>
+        <span class="image-subcaption">2-4 ludzie</span>
+    </div>
+</div>
+        <div class="slider2__item">
+    <div class="image-container">
+        <img class="img-fluid" src="room3.jpg" alt="c3">
+        <span class="image-caption">FOREST</span>
+        <span class="image-subcaption">2-12 People</span>
+    </div>
+</div>
+        <div class="slider2__item">
+    <div class="image-container">
+        <img class="img-fluid" src="room4.jpg" alt="c4">
+        <span class="image-caption">COZY</span>
+        <span class="image-subcaption">2-5 People</span>
+    </div>
+</div>
+        <div class="slider2__item">
+    <div class="image-container">
+        <img class="img-fluid" src="room5.jpg" alt="c5">
+        <span class="image-caption">SMALL</span>
+        <span class="image-subcaption">2-4 People</span>
+    </div>
+</div>
+          <div class="slider2__item">
+    <div class="image-container">
+        <img class="img-fluid" src="room6.png" alt="c6">
+        <span class="image-caption">STAR</span>
+        <span class="image-subcaption">4-15 People</span>
+    </div>
+</div>
+      </div>
+    </div>
+    <a class="slider2__control slider2__control_prev" href="#" role="button"></a>
+    <a class="slider2__control slider2__control_next" href="#" role="button"></a>
+  </div>
+
+    <div class="tariff-title">
+    <h2><span class="highlight">OUR PRICES</span> will meet all your needs</h2>
+</div>
+
+
+    <div class="rectangle-container">
+    <div class="rectangle2">
+        <h3 class="rectangle-title">Standard</h3>
+        <p class="rectangle-price">110£ everyone</p>
+        <ul class="rectangle-features">
+            <li>✓ Room rental: 2 hours</li>
+            <li>✓ Any room of your choice</li>
+            <li>✓ Any movies to choose from, no limits</li>
+            <li>✓ Pizza "Peperonni 40 cm" as a gift</li>
+            <li>✓ Unlimited popcorn</li>
+        </ul>
+        <a href="book.html" class="xxx">
+    <button class="booking-button">Reserve</button>
+</a>
+    </div>
+        <p></p>
+    <div class="rectangle2">
+        <h3 class="rectangle-title">Date</h3>
+        <p class="rectangle-price">140£ for everyone</p>
+        <ul class="rectangle-features2">
+            <li>✓ АRoom rental: 4 hours</li>
+            <li>✓ Any room of your choice</li>
+            <li>✓ Everything is the same as in the "Data" tariff</li>
+            <li>✓ Dinner for two (Japanese, Italian cuisine)</li>
+            <li>✓ Photo session (optional)</li>
+        </ul>
+        <a href="book.html" class="xxx">
+    <button class="booking-button">Reserve</button>
+</a>
+    </div>
+        <p></p>
+    <div class="rectangle2">
+        <h3 class="rectangle-title">Special</h3>
+        <p class="rectangle-price">125£ for everyone</p>
+        <ul class="rectangle-features3">
+            <li>✓ Room rental: 3 hours</li>
+            <li>✓ Any room of your choice</li>
+            <li>✓ Everything is the same as in the "Standard" tariff</li>
+            <li>✓ Sushi set as a gift</li>
+            <li>✓ Alcohol as a gift</li>
+            <li>✓ PlayStation 5</li>
+        </ul>
+       <a href="book.html" class="xxx">
+    <button class="booking-button">Reserve</button>
+</a>
+    </div>
+</div>
+
+
+
+    <div class="distinguishing-container2">
+    <h3 class="distinguishing-title2">How are we different from an ordinary cinema?</h3>
+    <p class="distinguishing-text2">There are no CCTV cameras in our cinema; Reserving a room involves handing over the premises and the keys (a separate room) to you for the reserved period - you can do whatever you want</p>    <div class="circles-container2">
+        <div class="circle-row2">
+            <div class="circle2"><i class="fas fa-wallet"></i></div>
+            <div class="circle2"><i class="fas fa-heart"></i></div>
+        </div>
+        <div class="text-row2">
+            <div class="circle-text4"><p>Great prices</p></div>
+            <div class="circle-text5"><p>Best service</p></div>
+        </div>
+        <div class="circle-row2">
+            <div class="circle2"><i class="fas fa-utensils"></i></div>
+            <div class="circle2"><i class="fas fa-gamepad"></i></div>
+        </div>
+        <div class="text-row2">
+            <div class="circle-text2"><p>You can take it with you</p></div>
+            <div class="circle-text3"><p>Console</p></div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="faq-section">
+    <h3 class="faq-title">
+        FAQ <span class="highlight">QUESTIONS</span>
+    </h3>
+    <p class="faq-description">
+        We tried to answer all questions asked by our guests.
+    </p>
+
+        <p></p>
+
+                  <div class="slider2">
+            <div class="slider2__wrapper">
+              <div class="slider2__items">
+                <div class="slider2__item">
+            <div class="image-container">
+                <img class="img-fluid" src="back.png" alt="c7">
+                <span class="image-caption4">
+Is there video surveillance in your halls?
+None of our rooms are equipped with a video monitoring system. And our managers always welcome all our guests as if it was their first time. We perfectly understand how important this issue is, which is why we pay special attention to it.</span> </div> </div>
+              </div>
+          </div>
+        </div>
+<p></p>
+        <div class="slider2">
+            <div class="slider2__wrapper">
+              <div class="slider2__items">
+                <div class="slider2__item">
+            <div class="image-container">
+                <img class="img-fluid" src="back.png" alt="c7">
+                <span class="image-caption2"> Can I really take any food with me?
+You can bring your own food and drinks or order them from any restaurant/cafe near the cinema. We offer fondue, snacks, popcorn, drinks and ice directly from us. We organize table setting and provide all necessary utensils (plates, glasses, cutlery, etc.).</span> </div> </div>        </div>
+          </div>
+        </div>
+        <p></p>
+        <div class="slider2">
+            <div class="slider2__wrapper">
+              <div class="slider2__items">
+                <div class="slider2__item">
+            <div class="image-container">
+                <img class="img-fluid" src="back.png" alt="c7">
+                <span class="image-caption3">How often are the rooms cleaned?
+We clean up after each guest.
+Before previous guests leave, we check whether everything is OK with the appliances and furniture.
+Please be advised that the booked hours include 10 minutes for our employee to clean the room.</span>
+            </div>
+        </div>
+        </div>
+          </div>
+        </div>
+</div>
+
+
+
+
+    <footer class="site-footer">
+    <div class="footer-container">
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2023 AFISHA. All rights reserved.</p>
+    </div>
+        <div class="payment-icons">
+            <img class="payment-icon" src="cc_images.png" alt="Visa"/>
+        </div>
+
+</footer>
+  <script>
+    'use strict';
+    var slideShow = (function () {
+      return function (selector, config) {
+        var
+          _slider2 = document.querySelector(selector), // основный элемент блока
+          _slider2Container = _slider2.querySelector('.slider2__items'), // контейнер для .slider2-item
+          _slider2Items = _slider2.querySelectorAll('.slider2__item'), // коллекция .slider2-item
+          _slider2Controls = _slider2.querySelectorAll('.slider2__control'), // элементы управления
+          _currentPosition = 0, // позиция левого активного элемента
+          _transformValue = 0, // значение транфсофрмации .slider2_wrapper
+          _transformStep = 100, // величина шага (для трансформации)
+          _itemsArray = [], // массив элементов
+          _timerId,
+          _indicatorItems,
+          _indicatorIndex = 0,
+          _indicatorIndexMax = _slider2Items.length - 1,
+          _stepTouch = 50,
+          _config = {
+            isAutoplay: false, // автоматическая смена слайдов
+            directionAutoplay: 'next', // направление смены слайдов
+            delayAutoplay: 5000, // интервал между автоматической сменой слайдов
+            isPauseOnHover: true // устанавливать ли паузу при поднесении курсора к слайдеру
+          };
+
+        // настройка конфигурации слайдера в зависимости от полученных ключей
+        for (var key in config) {
+          if (key in _config) {
+            _config[key] = config[key];
+          }
+        }
+
+
+
+
+        // наполнение массива _itemsArray
+        for (var i = 0, length = _slider2Items.length; i < length; i++) {
+          _itemsArray.push({ item: _slider2Items[i], position: i, transform: 0 });
+        }
+
+        // переменная position содержит методы с помощью которой можно получить минимальный и максимальный индекс элемента, а также соответствующему этому индексу позицию
+        var position = {
+          getItemIndex: function (mode) {
+            var index = 0;
+            for (var i = 0, length = _itemsArray.length; i < length; i++) {
+              if ((_itemsArray[i].position < _itemsArray[index].position && mode === 'min') || (_itemsArray[i].position > _itemsArray[index].position && mode === 'max')) {
+                index = i;
+              }
+            }
+            return index;
+          },
+          getItemPosition: function (mode) {
+            return _itemsArray[position.getItemIndex(mode)].position;
+          }
+        };
+
+        // функция, выполняющая смену слайда в указанном направлении
+        var _move = function (direction) {
+          var nextItem, currentIndicator = _indicatorIndex;;
+          if (direction === 'next') {
+            _currentPosition++;
+            if (_currentPosition > position.getItemPosition('max')) {
+              nextItem = position.getItemIndex('min');
+              _itemsArray[nextItem].position = position.getItemPosition('max') + 1;
+              _itemsArray[nextItem].transform += _itemsArray.length * 100;
+              _itemsArray[nextItem].item.style.transform = 'translateX(' + _itemsArray[nextItem].transform + '%)';
+            }
+            _transformValue -= _transformStep;
+            _indicatorIndex = _indicatorIndex + 1;
+            if (_indicatorIndex > _indicatorIndexMax) {
+              _indicatorIndex = 0;
+            }
+          } else {
+            _currentPosition--;
+            if (_currentPosition < position.getItemPosition('min')) {
+              nextItem = position.getItemIndex('max');
+              _itemsArray[nextItem].position = position.getItemPosition('min') - 1;
+              _itemsArray[nextItem].transform -= _itemsArray.length * 100;
+              _itemsArray[nextItem].item.style.transform = 'translateX(' + _itemsArray[nextItem].transform + '%)';
+            }
+            _transformValue += _transformStep;
+            _indicatorIndex = _indicatorIndex - 1;
+            if (_indicatorIndex < 0) {
+              _indicatorIndex = _indicatorIndexMax;
+            }
+          }
+          _slider2Container.style.transform = 'translateX(' + _transformValue + '%)';
+          _indicatorItems[currentIndicator].classList.remove('active');
+          _indicatorItems[_indicatorIndex].classList.add('active');
+        };
+
+        // функция, осуществляющая переход к слайду по его порядковому номеру
+        var _moveTo = function (index) {
+          var i = 0, direction = (index > _indicatorIndex) ? 'next' : 'prev';
+          while (index !== _indicatorIndex && i <= _indicatorIndexMax) {
+            _move(direction);
+            i++;
+          }
+        };
+
+        // функция для запуска автоматической смены слайдов через промежутки времени
+        var _startAutoplay = function () {
+          if (!_config.isAutoplay) {
+            return;
+          }
+          _stopAutoplay();
+          _timerId = setInterval(function () {
+            _move(_config.directionAutoplay);
+          }, _config.delayAutoplay);
+        };
+
+        // функция, отключающая автоматическую смену слайдов
+        var _stopAutoplay = function () {
+          clearInterval(_timerId);
+        };
+
+        // функция, добавляющая индикаторы к слайдеру
+        var _addIndicators = function () {
+          var indicatorsContainer = document.createElement('ol');
+          indicatorsContainer.classList.add('slider2__indicators');
+          for (var i = 0, length = _slider2Items.length; i < length; i++) {
+            var slider2IndicatorsItem = document.createElement('li');
+            if (i === 0) {
+              slider2IndicatorsItem.classList.add('active');
+            }
+            slider2IndicatorsItem.setAttribute("data-slide-to", i);
+            indicatorsContainer.appendChild(slider2IndicatorsItem);
+          }
+          _slider2.appendChild(indicatorsContainer);
+          _indicatorItems = _slider2.querySelectorAll('.slider2__indicators > li')
+        };
+
+        var _isTouchDevice = function () {
+          return !!('ontouchstart' in window || navigator.maxTouchPoints);
+        };
+
+        // функция, осуществляющая установку обработчиков для событий
+        var _setUpListeners = function () {
+          var _startX = 0;
+          if (_isTouchDevice()) {
+            _slider2.addEventListener('touchstart', function (e) {
+              _startX = e.changedTouches[0].clientX;
+              _startAutoplay();
+            });
+            _slider2.addEventListener('touchend', function (e) {
+              var
+                _endX = e.changedTouches[0].clientX,
+                _deltaX = _endX - _startX;
+              if (_deltaX > _stepTouch) {
+                _move('prev');
+              } else if (_deltaX < -_stepTouch) {
+                _move('next');
+              }
+              _startAutoplay();
+            });
+          } else {
+            for (var i = 0, length = _slider2Controls.length; i < length; i++) {
+              _slider2Controls[i].classList.add('slider2__control_show');
+            }
+          }
+          _slider2.addEventListener('click', function (e) {
+            if (e.target.classList.contains('slider2__control')) {
+              e.preventDefault();
+              _move(e.target.classList.contains('slider2__control_next') ? 'next' : 'prev');
+              _startAutoplay();
+            } else if (e.target.getAttribute('data-slide-to')) {
+              e.preventDefault();
+              _moveTo(parseInt(e.target.getAttribute('data-slide-to')));
+              _startAutoplay();
+            }
+          });
+          document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === "hidden") {
+              _stopAutoplay();
+            } else {
+              _startAutoplay();
+            }
+          }, false);
+          if (_config.isPauseOnHover && _config.isAutoplay) {
+            _slider2.addEventListener('mouseenter', function () {
+              _stopAutoplay();
+            });
+            _slider2.addEventListener('mouseleave', function () {
+              _startAutoplay();
+            });
+          }
+        };
+
+        // добавляем индикаторы к слайдеру
+        _addIndicators();
+        // установливаем обработчики для событий
+        _setUpListeners();
+        // запускаем автоматическую смену слайдов, если установлен соответствующий ключ
+        _startAutoplay();
+
+        return {
+          // метод слайдера для перехода к следующему слайду
+          next: function () {
+            _move('next');
+          },
+          // метод слайдера для перехода к предыдущему слайду
+          left: function () {
+            _move('prev');
+          },
+          // метод отключающий автоматическую смену слайдов
+          stop: function () {
+            _config.isAutoplay = false;
+            _stopAutoplay();
+          },
+          // метод запускающий автоматическую смену слайдов
+          cycle: function () {
+            _config.isAutoplay = true;
+            _startAutoplay();
+          }
+        }
+      }
+    }());
+
+    slideShow('.slider2', {
+      isAutoplay: true
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    let imageWrappers = document.querySelectorAll('.image-wrapper');
+
+    imageWrappers.forEach(function(wrapper) {
+        wrapper.addEventListener('click', function() {
+            let caption = this.querySelector('.image-caption');
+            if (caption.style.bottom === '0px' || caption.style.bottom === '') {
+                caption.style.bottom = '-20px';
+            } else {
+                caption.style.bottom = '0px';
+            }
+        });
+    });
+});
+
+
+
+  </script>
+
+</body>
+
+</html>
+

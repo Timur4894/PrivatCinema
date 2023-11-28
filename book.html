@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> <!-- Это подключает шрифт Roboto с Google Fonts -->
+
+    <title>App</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #190e54;
+            color: #fff;
+        }
+
+        #appNumber {
+            padding-left: 10px;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+        header h1 {
+            font-size: 25px;     /* Уменьшим размер шрифта */
+            margin-top: 10px;    /* Поднимем текст наверх */
+            margin-left: 10px;   /* Сместим текст влево */
+            font-weight: 300;    /* Сделаем текст более тонким */
+            letter-spacing: 2px; /* Расширим интервал между буквами */
+        }
+
+        #tariff {
+    padding-left: 10px;
+    padding-top: 30px;
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* вертикальное выравнивание содержимого по центру */
+}
+
+.chosenTariff {
+        box-shadow: 10px 10px 15px #636;
+    margin-left: 10px; /* добавляем немного отступа слева */
+    padding: 5px 10px; /* внутренние отступы для текста */
+    border: 2px solid #b2b0f9; /* толстая граница */
+    border-radius: 4px; /* скругленные углы границы */
+    font-weight: bold; /* делаем текст жирным */
+}
+
+
+#dateSection {
+    padding-left: 60px;
+    padding-top: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.chosenDate {
+        box-shadow: 10px 10px 15px #636;
+    margin-left: 10px;
+    margin-top: -10px;
+    padding: 5px 10px;
+    border: 2px solid #b2b0f9;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#datePicker {
+    margin-top: -10px;
+    margin-left: 10px;
+    width: 89%;
+    padding: 8px ;
+    border-radius: 4px;
+    border: 1px solid #b2b0f9;
+    background-color: rgba(255, 255, 255, 0);
+    color: gray;
+}
+
+
+.input-section {
+    padding: 10px; /* отступы сверху и снизу 10px, слева и справа 100px */
+    width: 100%;
+    box-sizing: border-box; /* учитывает padding в общей ширине элемента */
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.input-section input {
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%; /* занимает всю доступную ширину */
+    padding: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #b2b0f9;
+    border-radius: 4px;
+    box-sizing: border-box; /* учитывает padding и border в общей ширине элемента */
+
+}
+.tariffSection1{
+    width: 91%; /* занимает всю доступную ширину */
+    border: 1px solid #b2b0f9;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: 10px; /* добавляем немного отступа слева */
+    margin-top: 20px;
+    padding: 6px;
+    color: gray;
+}
+
+.tariffSection2{
+    margin-left: 100px; /* добавляем немного отступа слева */
+    color: gray;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 4px;
+}
+
+
+#timeSection {
+    padding-left: 10px;
+    padding-top: 40px; /* Отступ сверху для разделения с блоком тарифа */
+    margin-bottom: -30px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#timeButtons {
+    padding-top: 70px;
+    display: flex;
+    flex-wrap: wrap;  /* Это позволит кнопкам переноситься на следующую строку при необходимости */
+    gap: 10px; /* Отступ между кнопками */
+    margin-left: 10px;
+}
+
+#timeButtons button {
+    padding: 5px 15px;
+    font-size: 16px;
+    border: 1px solid #b2b0f9; /* Добавьте этот стиль для обводки кнопок */
+    background-color: transparent; /* Сделайте фон кнопок прозрачным */
+    color: #fff;
+    cursor: pointer;
+    border-radius: 15px; /* Заокругленные углы для кнопок */
+    width: calc(33% - 10px); /* Ширина кнопок такова, чтобы три из них поместились на одном ряду с учетом отступов */
+    text-align: center; /* Выровнять текст по центру */
+}
+
+#timeButtons button:hover {
+    background-color: rgba(25, 14, 84, 0.8); /* При наведении делаем кнопку немного светлее */
+}
+
+.chosenTime{
+    margin-top: 5px;
+    font-size: 15px;
+    margin-left: 10px; /* добавляем немного отступа слева */
+    border-radius: 4px;
+    border: 2px solid #b2b0f9;
+    width: 15%;
+    height: 20px;
+    text-align: center;
+        box-shadow: 10px 10px 15px #636;
+}
+
+.timetext{
+     margin-top: 50px;
+     margin-left: 10px; /* добавляем немного отступа слева */
+    margin-bottom: -70px;
+}
+
+#hallSection {
+    padding-left: 200px;
+    padding-top: -150px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#hallSelectorSection {
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+#hallSelector {
+    padding: 5px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #190e54;
+    color: #fff;
+    border: 1px solid #b2b0f9;
+    box-shadow: 10px 10px 15px #636;
+}
+
+#hallSection span {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: 1px solid #b2b0f9;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px #636;
+}
+
+#hallImageContainer {
+    padding-top: 20px;
+}
+
+#hallImage {
+    width: 90%;  /* Это убедится, что изображение будет подстраиваться под размер контейнера */
+    height: auto;
+    border-radius: 10px;  /* Заокругленные углы для изображения */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Небольшая тень для изображения */
+    border: 1px solid #b2b0f9;
+    margin-left: 20px;
+}
+
+
+#paymentInfo {
+    padding-top: 50px;
+    margin-bottom: -20px;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+
+}
+
+
+#openModalButton {
+    background-color: #c36; /* розовый фон */
+    color: #ffffff; /* белый текст */
+    border: none; /* удалить стандартный бордюр */
+    padding: 7px 0; /* верхний и нижний padding для размера кнопки */
+    font-size: 20px; /* размер шрифта */
+    width: 95%; /* на всю ширину экрана с отступом по 100px с каждой стороны */
+    margin: 30px 100px; /* отступы: 30px сверху и снизу, 100px слева и справа */
+    border-radius: 50px; /* сильно заокругленные углы */
+    cursor: pointer; /* курсор в виде руки при наведении */
+    transition: background-color 0.3s; /* плавное изменение цвета фона */
+    margin-left: 10px;
+}
+
+
+
+#fullName{
+    color: #b2b0f9;
+}
+#phoneNumber{
+    color: #b2b0f9;
+}
+
+
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+#closeModal {
+    margin-top: 10px;
+}
+
+
+/* По умолчанию, блок с ошибкой скрыт */
+.desktop-error {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0); /* Полупрозрачный чёрный фон */
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20%; /* Для вертикального центрирования текста */
+    z-index: 9999; /* Чтобы блок был выше других элементов */
+}
+
+/* Если ширина экрана больше 1024px (обычно это десктопные компьютеры), покажем сообщение */
+@media screen and (min-width: 600px) {
+    .desktop-error {
+        display: block;
+    }
+
+    /* Скрываем остальное содержимое сайта */
+    body > *:not(.desktop-error) {
+        display: none;
+    }
+}
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: rgba(53,23,152, 0.2); /* Прозрачность добавлена к белому фону */
+    padding: 20px;
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-top: 100px;
+}
+
+.alert-text {
+    color: red; /* Делаем текст "не работают" красным */
+}
+
+/* Синий фон и отступы для полей ввода */
+.card-number, .card-expiry, .card-name, .card-cvv {
+    background-color: #141359;
+    margin-bottom: 10px; /* Добавляем расстояние между полями */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+        html, body {
+            overflow-x: hidden;
+        }
+
+button.selected {
+    background-color: pink;
+}
+
+.selected {
+    background-color: #0099cc; /* Выберите цвет, который вам нравится */
+    color: white;
+}
+
+#timeButtons button {
+        background-color: #190e54;; /* Default button color */
+        color: #fff; /* Default text color */
+    }
+
+    #timeButtons button.selected {
+        background-color: rgba(201, 43, 119, 0.5);
+        color: #fff;
+    }
+    .xxxx{
+        margin-left: 10px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+                <a href="index.html" style="text-decoration: none; color: inherit;">BROADWAY</a>
+        </h1>
+
+    </header>
+    <div id="appNumber" >App #</div> <p class="xxxx">Address - 160 Mount Pleasant, Liverpool L3 5TR
+ </p>
+
+    <div id="tariff">
+    Tariff
+    <span class="chosenTariff">________</span>
+
+        <div id="dateSection">
+    Date
+    <span class="chosenDate">________</span>
+</div>
+</div>
+    <div id="timeSection">
+    Time <span class="chosenTime">________</span>
+</div>
+
+    <div id="hallSection">
+    Hall <span class="chosenHall">________</span>
+</div>
+
+
+    <div class="input-section">
+    <label for="fullName"></label>
+    <input type="text" id="fullName" placeholder="Enter your full name">
+
+    <label for="phoneNumber"></label>
+    <input type="tel" id="phoneNumber" placeholder="Enter your phone number">
+</div>
+
+
+    <input type="date" id="datePicker">
+    <div id="tariffSection" class="tariffSection1">
+    Select tariff:
+
+    <select id="tariffSelector" class="tariffSection2">
+        <option value="Standard">Standard</option>
+        <option value="Date">Date</option>
+        <option value="Special">Special</option>
+    </select>
+</div>
+
+    <div class="timetext"><p>Select time:</p></div>
+<div id="timeButtons">
+    <button data-time="10:00">10:00</button>
+    <button data-time="12:00">12:00</button>
+    <button data-time="14:00">14:00</button>
+    <button data-time="16:00">16:00</button>
+    <button data-time="18:00">18:00</button>
+    <button data-time="20:00">20:00</button>
+</div>
+
+
+
+<div id="hallSelectorSection">
+    Select a room:
+    <select id="hallSelector">
+    <option value="-" data-img="path/to/default/img.jpg">-</option>
+    <option value="HOLLYWOOD" data-img="room2.jpg">HOLLYWOOD</option>
+    <option value="LAS" data-img="room3.jpg">FOREST</option>
+    <option value="PRZYTULNY" data-img="room4.jpg">COZY</option>
+    <option value="MAŁY" data-img="room5.jpg">SMALL</option>
+    <option value="GWIAZDA" data-img="room6.png">STAR</option>
+</select>
+</div>
+
+    <div id="hallImageContainer">
+    <img id="hallImage" src="back.png" alt="Image of the hall" width="200">
+</div>
+
+
+    <div id="paymentInfo">
+    Pay: <span class="totalAmount">--</span> £
+</div>
+    <button id="openModalButton" type="button">Pay</button>
+
+
+
+
+<script>
+    window.onload = function() {
+        const randomNum = Math.floor(1000 + Math.random() * 9000); // Генерирует случайное 4-х значное число.
+        const appNumDiv = document.getElementById('appNumber');
+        appNumDiv.textContent += randomNum; // Добавляет случайное число к надписи.
+
+        const dateSpan = document.querySelector('.chosenDate');
+        const datePicker = document.getElementById('datePicker');
+
+        // Установка текущей даты
+        const today = new Date();
+        datePicker.value = today.toISOString().split('T')[0];  // Формат даты для input type="date" - это YYYY-MM-DD
+        updateDisplayedDate(today);
+
+        // Обработчик изменений даты
+        datePicker.addEventListener('change', function() {
+            const selectedDate = new Date(datePicker.value);
+            updateDisplayedDate(selectedDate);
+        });
+
+        document.getElementById('openModalButton').addEventListener('click', function () {
+        const selectedTariff = document.getElementById('tariffSelector').value;
+        let redirectUrl = 'end.html'; // По умолчанию перенаправляем на end.html
+
+        if (selectedTariff === 'Date') {
+            redirectUrl = 'end2.html'; // Если выбран тариф Date, перенаправляем на end2.html
+        } else if (selectedTariff === 'Special') {
+            redirectUrl = 'end3.html'; // Если выбран тариф Special, перенаправляем на end3.html
+        }
+
+        // Перенаправляем пользователя на выбранную страницу
+        window.location.href = redirectUrl;
+    });
+
+
+        function updateDisplayedDate(date) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');  // Месяцы начинаются с 0
+            dateSpan.textContent = `${day}.${month}`;
+        }
+    }
+
+    document.getElementById('tariffSelector').addEventListener('change', function() {
+        const selectedTariff = this.value;
+        document.querySelector('.chosenTariff').textContent = selectedTariff;
+    });
+
+    const timeButtons = document.querySelectorAll('#timeButtons button');
+
+    // Add a click event listener to each time button
+    timeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove 'selected' class from all buttons
+            timeButtons.forEach(btn => btn.classList.remove('selected'));
+
+            // Add 'selected' class to the clicked button
+            this.classList.add('selected');
+
+            const selectedTime = this.getAttribute('data-time');
+            document.querySelector('.chosenTime').textContent = selectedTime;
+        });
+    });
+
+    document.getElementById('hallSelector').addEventListener('change', function() {
+        const selectedHall = this.value;
+        const hallImageSrc = this.options[this.selectedIndex].getAttribute('data-img');
+
+        document.querySelector('.chosenHall').textContent = selectedHall;
+        document.getElementById('hallImage').src = hallImageSrc;
+    });
+
+    document.getElementById('tariffSelector').addEventListener('change', function() {
+        const selectedTariff = this.value;
+
+        document.querySelector('.chosenTariff').textContent = selectedTariff;
+
+        let price = 0;
+
+        switch (selectedTariff) {
+            case "Standard":
+                price = 110;
+                break;
+            case "Special":
+                price = 125;
+                break;
+            case "Date":
+                price = 140;
+                break;
+        }
+
+        document.querySelector('.totalAmount').textContent = price;
+    });
+
+    // Получаем элементы
+    const modal = document.getElementById('paymentModal');
+    const openModalButton = document.getElementById('openModalButton');
+    const closeModalButton = document.getElementById('closeModalButton');
+
+    // Функции для открытия и закрытия модального окна
+    openModalButton.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    closeModalButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Если пользователь кликает вне модального окна, то закрыть его
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>
+

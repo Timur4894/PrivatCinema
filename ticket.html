@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-info {
+    margin-bottom: 20px;
+}
+
+.warning {
+    color: red;
+    margin-top: 20px;
+}
+
+#qr-output{
+  margin-left: 40px;
+}
+
+
+</style>
+    <div class="container">
+        <div class="ticket-info">
+            Here's your ticket: <br>
+            Your tariff - Standard <br>
+            Address - 160 Mount Pleasant, Liverpool L3 5TR
+        </div>
+        <div id="qr-output"></div>
+        <div class="warning">
+            Be sure to save this ticket by taking a screenshot.
+          If you have any questions, you can contact technical support
+        </div>
+    </div>
+
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+    window.onload = function() {
+    const randomValue = generateRandomString(10); // генерируем строку из 10 символов
+    const qrOutput = document.getElementById("qr-output");
+    new QRCode(qrOutput, randomValue);
+}
+
+function generateRandomString(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+</script>
+</body>
+</html>
